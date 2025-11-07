@@ -1,0 +1,3 @@
+**Hello, this is a sample document. **
+**This document contains text and images. **
+[Image: image1.png ]
