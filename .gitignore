@@ -1,0 +1,47 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.py.class
+
+# Virtual environments
+myenv/
+.env/
+.venv/
+env/
+ENV/
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Byte-compiled / cache
+*.egg
+*.egg-info/
+dist/
+build/
+
+# --- Project-specific ---
+# Ignore config or credentials
+config.json
+secrets.json
+
+# If using PyCharm or VS Code
+*.iml
+*.code-workspace
+
+# --- Docs
