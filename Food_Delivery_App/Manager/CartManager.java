@@ -21,9 +21,9 @@ public class CartManager {
     }
 
     public static CartManager getInstance(){
-        if(cartManager!=null){
+        if(cartManager==null){
             synchronized(lock){
-                if(cartManager!=null){
+                if(cartManager==null){
                     cartManager = new CartManager();
                 }
             }

@@ -17,9 +17,9 @@ public class DishManager {
     }
 
     public static DishManager getInstance(){
-        if(dishManager!=null){
+        if(dishManager==null){
             synchronized(lock){
-                if(dishManager!=null){
+                if(dishManager==null){
                     dishManager = new DishManager();
                 }
             }

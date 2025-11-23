@@ -19,9 +19,9 @@ public class UserManager {
     }
 
     public static UserManager getInstance(){
-        if(userManager!=null){
+        if(userManager==null){
             synchronized(lock){
-                if(userManager!=null){
+                if(userManager==null){
                     userManager = new UserManager();
                 }
             }
@@ -41,6 +41,16 @@ public class UserManager {
         users.remove(user);
         Cart cart = cartManager.getCart(user.getCartid());
         cartManager.removeCart(cart); 
+    }
+
+    public User getUserByName(String name){
+        // we can use stragegy design here to make it more easily replacable
+        for(User listuser : users){
+            if(listuser.getName().equals(name)){
+                return listuser;
+            }
+        }
+        return null;
     }
 
 }

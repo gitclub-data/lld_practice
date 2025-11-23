@@ -23,9 +23,9 @@ public class OrderManager {
     }
 
     public static OrderManager getInstance(){
-        if(orderManager!=null){
+        if(orderManager==null){
             synchronized(lock){
-                if(orderManager!=null){
+                if(orderManager==null){
                     orderManager = new OrderManager();
                 }
             }
@@ -73,7 +73,8 @@ public class OrderManager {
 
 
     public void Checkout(Order order){
-        System.out.println("Calculating total price and checking out");
+        Double price = calculateTotalPrice(order);
+        System.out.println("Started Payment Of the FOllowing order with price : "+ price);
     }
 
     

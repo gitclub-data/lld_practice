@@ -1,13 +1,14 @@
 package Food_Delivery_App.Model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Cart {
 
     private String cartid;
-    private Map<Resturent, List<Dish>> dishes;
+    private Map<Resturent, List<Dish>> dishes = new HashMap<>();
     private User user;
 
     private static Integer counter = 0;
@@ -31,7 +32,8 @@ public class Cart {
         return dishes;
     }
 
-    public void addDish(Resturent resturent, Dish dish){
+    public void addDish(Dish dish){
+        Resturent resturent = dish.getResturent();
         dishes.computeIfAbsent(resturent, key -> new ArrayList<>()).add(dish);
     }
 

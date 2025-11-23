@@ -21,9 +21,9 @@ public class ResturentManagar {
     }
 
     public static ResturentManagar getInstance(){
-        if(resturentManager!=null){
+        if(resturentManager==null){
             synchronized(lock){
-                if(resturentManager!=null){
+                if(resturentManager==null){
                     resturentManager = new ResturentManagar();
                 }
             }
@@ -45,10 +45,13 @@ public class ResturentManagar {
 
     public void addDishToResturent(Resturent resturent, Dish dish){
         resturent.addDish(dish);
+        dish.setResturent(resturent);
     }
 
     public void removeDishFromResturent(Resturent resturent, Dish dish){
+        dish.setResturent(null);
         resturent.removeDish(dish);
+
     }
 
     public List<Resturent> searchResturent(){
