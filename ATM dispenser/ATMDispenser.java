@@ -22,11 +22,7 @@ abstract class MoneyHandler{
                 if(this.nexthandler==null){
                     throw new Exception("Cannot dispense the required amount");
                 }else{
-                    try{
-                        nexthandler.getmoney(rstoget);
-                    }catch(Exception e){
-                        throw e;
-                    }
+                    nexthandler.getmoney(rstoget);
                 }
             }
             if(noOfnotesrequired>0){
@@ -36,14 +32,10 @@ abstract class MoneyHandler{
             if(this.nexthandler==null){
                 throw new Exception("Cannot dispense the required amount");
             }else{
-                try{
-                    nexthandler.getmoney(rstoget - (noOfNotes*denomination));
-                    System.out.println("getting out "+noOfNotes+"x "+denomination+" notes");
-                    rstoget -= noOfNotes*denomination;
-                    noOfNotes = 0;
-                }catch(Exception e){
-                    throw e;
-                }
+                nexthandler.getmoney(rstoget - (noOfNotes*denomination));
+                System.out.println("getting out "+noOfNotes+"x "+denomination+" notes");
+                rstoget -= noOfNotes*denomination;
+                noOfNotes = 0;
             }
         }
     }
@@ -127,7 +119,7 @@ public class ATMDispenser {
         fiftys.setHandler(tens);
 
         System.out.println("Please enter the amount to withdraw in multiples of 10");
-        Integer amountToWithdraw = 6380;
+        Integer amountToWithdraw = 7380;
         System.out.println("You have Entered the amount as "+ amountToWithdraw);
         
         thousands.despenseMoney(amountToWithdraw);
